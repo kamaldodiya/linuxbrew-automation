@@ -256,13 +256,13 @@ brew tap denji/nginx
 ###################### FREEZE BREW AND HOMEBREW CORE FOR RELEASE 95 TO AVOID SURPRISES IN CASE USERS WANT TO BUILD THEIR OWN IMAGES ################################
 
 pushd $ENSEMBL_LINUXBREW_DIR
-git checkout 9769fb22fe2cef2dc00420111fd4ecf5b19e5c0d
+git checkout 7f312edf5752e23c9122d7e84d60e648d8a32c58
 popd
 
 
 pushd "$(brew --repo homebrew/core)"
 git fetch --unshallow
-git checkout c7e37d57f0655d422f9a6eb2d225836bca3d7cfa
+git checkout a7cdda77edfb9c3f083b669c582c0c6f69d82fed
 popd
 
 ###################################################################################################################
@@ -271,14 +271,6 @@ popd
 
 
 
-###################### TEMP SOLUTION UNTIL DECISION ON UPGRADING HDF5 VERSION IS MADE ################################
-
-brew tap ensembl/ensembl --full
-cd $(brew --repository ensembl/ensembl)
-git checkout feature/hdf5@1.8.20
-cd -
-
-############################################################################################################
 
 
 
@@ -311,7 +303,7 @@ time brew install ensembl/cask/web-libsforcpanm
 # This is a hack to save build time while installing additional libs in ensembl-web-02 dockerfile.
 if [ ! -z "$IS_A_DOCKER_INSTALL" ]; then
   time brew install ensembl/external/emboss
-  time brew install ensembl/ensembl/hdf5@1.8
+  time brew install hdf5
 fi
 
 
