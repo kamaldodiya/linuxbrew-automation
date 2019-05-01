@@ -228,9 +228,8 @@ fi
 [ -d "$ENSEMBL_SOFTWARE_DEPENDENCIES_DIR" ] || mkdir $ENSEMBL_SOFTWARE_DEPENDENCIES_DIR
 
 
-print_this "Clonning linuxbrew into $ENSEMBL_LINUXBREW_DIR"
-git clone https://github.com/Linuxbrew/brew.git $ENSEMBL_LINUXBREW_DIR
-
+print_this "Clonning homebrew into $ENSEMBL_LINUXBREW_DIR (Linuxbrew is now merged with homebrew)"
+git clone https://github.com/Homebrew/brew.git $ENSEMBL_LINUXBREW_DIR
 
 print_this "Turning off brew analytics"
 brew analytics off
@@ -255,15 +254,10 @@ brew tap denji/nginx
 
 ###################### FREEZE BREW AND HOMEBREW CORE FOR RELEASE 95 TO AVOID SURPRISES IN CASE USERS WANT TO BUILD THEIR OWN IMAGES ################################
 
-pushd $ENSEMBL_LINUXBREW_DIR
-git checkout 7f312edf5752e23c9122d7e84d60e648d8a32c58
-popd
-
-
-pushd "$(brew --repo homebrew/core)"
-git fetch --unshallow
-git checkout a7cdda77edfb9c3f083b669c582c0c6f69d82fed
-popd
+# pushd "$(brew --repo homebrew/core)"
+# git fetch --unshallow
+# git checkout a7cdda77edfb9c3f083b669c582c0c6f69d82fed
+# popd
 
 ###################################################################################################################
 
