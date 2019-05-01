@@ -286,18 +286,18 @@ if [ ! -z "$IS_A_DOCKER_INSTALL" ]; then brew install python@2 --build-from-sour
 ##############################################################
 
 
-time brew install ensembl/cask/web-base
+time brew install kamaldodiya/cask/web-base
 
 
 
 print_this "Installing Ensembl base libraries for cpanm"
 
-time brew install ensembl/cask/web-libsforcpanm
+time brew install kamaldodiya/cask/web-libsforcpanm
 
 
 # This is a hack to save build time while installing additional libs in ensembl-web-02 dockerfile.
 if [ ! -z "$IS_A_DOCKER_INSTALL" ]; then
-  time brew install ensembl/external/emboss
+  time brew install kamaldodiya/external/emboss
   time brew install hdf5
 fi
 
