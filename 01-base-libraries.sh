@@ -243,11 +243,12 @@ mkdir -p $HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE
 
 
 print_this "Tapping Homebrew External, Homebrew Ensembl, Homebrew Web, Homebrew Moonshine and Homebrew Cask"
-brew tap ensembl/external && \
+# brew tap ensembl/external && \
+brew tap kamaldodiya/external && \
 #brew tap ensembl/ensembl && \
 brew tap ensembl/web && \
 brew tap ensembl/moonshine && \
-brew tap ensembl/cask
+brew tap kamaldodiya/cask
 brew tap denji/nginx
 
 
